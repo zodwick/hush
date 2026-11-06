@@ -3,7 +3,10 @@
 A tiny macOS menu bar app for the **Sony WH-1000XM4**: Sony's headphone
 settings, on your Mac. No dependencies.
 
-<img src="docs/screenshot.png" width="320" alt="Hush panel">
+<p>
+  <img src="docs/screenshot.png" width="49%" alt="Hush panel in the menu bar">
+  <img src="docs/screenshot-settings.png" width="49%" alt="Hush panel with settings expanded">
+</p>
 
 - Noise cancelling / ambient / off, ambient level, focus on voice
 - Battery level
