@@ -11,11 +11,14 @@ cd "$(dirname "$0")/.."
 swift build -c release --product Hush
 swift build -c release --product hushctl
 
-APP=build/Hush.app
-rm -rf "$APP"
+# Spotlight skips folders ending in .noindex, so this staging copy doesn't
+# show up next to the installed app when searching "Hush".
+APP=build/app.noindex/Hush.app
+rm -rf "$APP" build/Hush.app
 mkdir -p "$APP/Contents/MacOS" "$APP/Contents/Resources"
 cp "$(swift build -c release --show-bin-path)/Hush" "$APP/Contents/MacOS/Hush"
 cp Resources/Info.plist "$APP/Contents/Info.plist"
+cp Resources/AppIcon.icns "$APP/Contents/Resources/AppIcon.icns"
 cp "$(swift build -c release --show-bin-path)/hushctl" build/hushctl
 
 # Ad-hoc signature: enough for macOS to run it locally and ask for Bluetooth
